@@ -1,0 +1,170 @@
+body {
+    font-family: 'Poppins', 'Arial', sans-serif;
+    background-color: #fef7f7;
+    margin: 0;
+    padding: 20px;
+    color: #333;
+}
+
+.menu {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 20px;
+}
+
+.menu button {
+    margin: 0 10px;
+    padding: 10px 20px;
+    background-color: #f8c8dc;
+    border: none;
+    border-radius: 20px;
+    cursor: pointer;
+    font-size: 16px;
+    box-shadow: 0 3px 6px rgba(0, 0, 0, 0.1);
+    transition: all 0.3s ease;
+}
+
+.menu button:hover {
+    background-color: #ffc1d6;
+    transform: translateY(-3px);
+}
+
+#giftContainer {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 20px;
+    gap: 20px;
+}
+
+.gift-controls {
+    display: flex;
+    flex-direction: column; /* 上下に配置 */
+    align-items: center; /* 中央揃え */
+    gap: 15px; /* ボタンや記号間の間隔 */
+}
+
+.increase-container,
+.decrease-container {
+    display: flex;
+    gap: 10px; /* ボタン間の間隔 */
+}
+
+.plus-symbol {
+    font-size: 20px;
+    font-weight: bold;
+    color: #8ecdfd;
+    margin: 0px 0; /* 記号上下のスペース */
+}
+
+.minus-symbol {
+    font-size: 24px;
+    font-weight: bold;
+    color: #ff6f91;
+    margin: 0px 0; /* 記号上下のスペース */
+}
+
+.gift-item label {
+    display: block; /* チェックボックスを独立表示 */
+    justify-content: center; /* 水平方向に中央揃え */
+    margin-bottom: 10px;
+}
+
+.gift-item {
+    background-color: #fff;
+    border-radius: 15px;
+    padding: 20px;
+    text-align: center;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    width: 90%;
+    max-width: 800px;
+    transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.gift-item:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+}
+
+.gift-header {
+    font-size: 18px;
+    font-weight: bold;
+    color: #ff6f91;
+    margin-bottom: 10px;
+}
+
+
+.gift-controls {
+    display: flex;
+    flex-direction: column; /* ボタンを上下に配置 */
+    gap: 10px; /* 上下ボタン間の間隔 */
+    align-items: center;
+}
+
+.increase-container {
+    display: flex;
+    gap: 5px; /* 増加ボタン間の間隔 */
+}
+
+.decrease-container {
+    display: flex;
+    gap: 5px; /* 減少ボタン間の間隔 */
+}
+
+
+.gift-controls button {
+    padding: 5px 15px;
+    border: none;
+    border-radius: 15px;
+    font-size: 14px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.gift-controls button.increment {
+    background-color: #cce4f6;
+    color: #004c8c;
+}
+
+.gift-controls button.increment:hover {
+    background-color: #a3d1f0;
+}
+
+.gift-controls button.decrement {
+    background-color: #f6cccc;
+    color: #8c0000;
+}
+
+.gift-controls button.decrement:hover {
+    background-color: #f0a3a3;
+}
+
+.delete-btn {
+    display: block;
+    background-color: #ff6f91;
+    color: #fff;
+    border: none;
+    border-radius: 15px;
+    padding: 8px 15px;
+    margin-top: 10px;
+    margin-left: auto;
+    margin-right: auto; /* ボタンを中央揃え */
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+.delete-btn:hover {
+    background-color: #e45c78;
+}
+
+.achieved {
+    background-color: #e0ffec;
+    box-shadow: 0 4px 8px rgba(0, 255, 127, 0.2);
+}
+
+.achieved-text {
+    margin-left: 10px;
+    font-size: 20px;
+    color: #28a745;
+    font-weight: bold;
+    display: inline-block;
+}
