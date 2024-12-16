@@ -107,7 +107,7 @@ specialNumberBtn.addEventListener("click", () => {
         plusMinusSymbol.textContent = "-";
 
         // 増加ボタンを作成
-        const increments = [1, 10, 50, 100];
+        const increments = [1, 5, 10, 50, 100];
         increments.forEach(value => {
             const plusBtn = document.createElement("button");
             plusBtn.textContent = `${value}`;
