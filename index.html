@@ -17,11 +17,16 @@
     <div id="giftContainer"></div>
 
     <!-- 選択ボタンを表示するためのコンテナ -->
-    <div id="optionContainer" style="display: none; text-align: center; margin-top: 20px;">
-        <button id="starBtn" style="background-color: lightblue; padding: 10px; margin: 5px;">スター</button>
+    <div id="optionContainer">
+        <!-- 上段のボタン（コメントとスター） -->
+        <div class="option-row">
+            <button id="starBtn" style="background-color: lightblue; padding: 10px; margin: 5px;">スター</button>
         <button id="commentBtn" style="background-color: lightblue; padding: 10px; margin: 5px;">コメント</button>
+        </div>
+        <!-- 下段のキャンセルボタン -->
         <button id="cancelBtn" style="background-color: lightgray; padding: 10px; margin: 5px;">キャンセル</button>
     </div>
+
 
     <script src="script.js"></script>
 </body>
