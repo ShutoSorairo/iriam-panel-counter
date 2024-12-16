@@ -3,7 +3,13 @@ document.addEventListener("DOMContentLoaded", () => {
     const giftContainer = document.getElementById("giftContainer");
     const addGiftBtn = document.getElementById("addGiftBtn");
     const specialNumberBtn = document.getElementById("specialNumberBtn");
-
+    const starBtn = document.getElementById("starBtn");
+    const commentBtn = document.getElementById("commentBtn");
+    const cancelBtn = document.getElementById("cancelBtn");
+    const popupBackground = document.createElement("div");
+    popupBackground.id = "popupBackground";
+    document.body.appendChild(popupBackground);
+    
     // ページ読み込み時に保存されているギフト情報を復元
     loadGifts();
 
@@ -37,29 +43,46 @@ document.addEventListener("DOMContentLoaded", () => {
         saveGifts(); // ギフト情報を自動保存
     });
 
-   // 「キリ番」ボタンがクリックされた時の処理
+// キリ番ボタンの処理
 specialNumberBtn.addEventListener("click", () => {
-    // 選択肢を作成
-    const options = ["スター", "コメント"];
-    const selectedType = prompt(`以下から選択してください:\n1. スター\n2. コメント`);
+    popupBackground.style.display = "block"; // 背景を表示
+    optionContainer.style.display = "block"; // モーダルを表示
+});
 
-    let isStar;
-    if (selectedType === "1") {
-        isStar = true;
-    } else if (selectedType === "2") {
-        isStar = false;
-    } else {
-        alert("無効な選択です。処理を中止します。");
-        return;
-    }
+// ポップアップを非表示にする関数
+function closePopup() {
+    popupBackground.style.display = "none"; // 背景を非表示
+    optionContainer.style.display = "none"; // モーダルを非表示
+}
 
+// スターがクリックされた場合
+starBtn.addEventListener("click", () => {
+    handleSpecialNumber(true);
+    closePopup();
+});
+
+// コメントがクリックされた場合
+commentBtn.addEventListener("click", () => {
+    handleSpecialNumber(false);
+    closePopup();
+});
+
+// キャンセルがクリックされた場合
+cancelBtn.addEventListener("click", closePopup);
+
+// 背景クリックでポップアップを閉じる処理
+popupBackground.addEventListener("click", closePopup);
+
+
+ // 共通関数
+function handleSpecialNumber(isStar) {
     const type = isStar ? "スター" : "コメント";
 
-    // デフォルトの個数を設定
+    // デフォルトの個数
     const defaultCount = isStar ? 1000 : 100;
 
     // 個数を入力
-    const count = parseInt(prompt(`個数を入力してください`, defaultCount), 10);
+    const count = parseInt(prompt(`${type}の個数を入力してください`, defaultCount), 10);
     if (isNaN(count) || count <= 0) {
         alert("個数は正の整数で入力してください。処理を中止します。");
         return;
@@ -69,7 +92,7 @@ specialNumberBtn.addEventListener("click", () => {
     const typeText = isStar ? "スタキリ" : "コメキリ";
     addSpecialNumber(typeText, count, false);
     saveGifts(); // ギフト情報を自動保存
-});
+}
 
 
     // ギフトを追加する関数
